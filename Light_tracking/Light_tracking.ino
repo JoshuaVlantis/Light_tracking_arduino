@@ -61,12 +61,12 @@
 
 
 //Checks if the room lighting isnt too dim if the room is too dim the servos will switch off      
-      if  (allav > 15)
+      while  (allav > 15)
         {
           lightstate = 1;
         }
 
-      if  (allav < 15)
+      while  (allav < 15)
         {
           lightstate = 0;
           ii  = 90;
@@ -79,36 +79,36 @@ Serial.println(allav);
 
 
 
-    if ((sens1 > sens2) && (i < 180))
+    while ((sens1 > sens2) && (i < 180))
       {
         myservo.write(i);
         delay (30);
-        i = i + 1;
+        i++;
        
       }
 
-    if ((sens1 < sens2) && (i > 0))
+    while ((sens1 < sens2) && (i > 0))
       {
         myservo.write(i);
         delay (30);
-        i = i - 1;
+        i--;
         
       }
 
 
-    if ((sens3 < sens4) && (ii < 150))
+    while ((sens3 < sens4) && (ii < 150))
       {
         myservo2.write(ii);
         delay (30);
-        ii = ii + 1;
+        ii++;
         
       }
 
-     if ((sens3 > sens4) && (ii > 30))
+     while ((sens3 > sens4) && (ii > 30))
       {
         myservo2.write(ii);
         delay (30);
-        ii = ii - 1;
+        ii--;
         
       }
 
